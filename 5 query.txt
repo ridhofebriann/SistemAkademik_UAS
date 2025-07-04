@@ -1,0 +1,24 @@
+SELECT
+    m.nim,
+    m.nama AS nama_mahasiswa,
+    CONCAT(UPPER(mk.nama), ' (', mk.sks, ' SKS)') AS info_mata_kuliah, /* CONCAT & UPPER */
+    mk.sks,
+    d.nama AS nama_dosen,
+    CONCAT(jm.hari, ', Pukul ', jm.jam) AS info_jadwal, /* CONCAT */
+    jm.ruang,
+    krs.semester,
+    IFNULL(krs.nilai, 'Belum Dinilai') AS nilai_ifnull, /* IFNULL */
+    DATEDIFF(NOW(), m.tgl_lahir) AS umur_hari, /* DATEDIFF & NOW */
+    HITUNG_SKS_TOTAL_MAHASISWA(m.nim) AS total_sks_mahasiswa,
+    FORMAT_NAMA_DOSEN(d.nama) AS dosen_dengan_gelar
+FROM
+    KRSMahasiswa krs
+JOIN
+    Mahasiswa m ON krs.nim = m.nim
+JOIN
+    JadwalMengajar jm ON krs.kd_mk = jm.kd_mk AND krs.kd_ds = jm.kd_ds
+JOIN
+    MataKuliah mk ON jm.kd_mk = mk.kd_mk
+JOIN
+    Dosen d ON jm.kd_ds = d.kd_ds
+ORDER BY m.nim, krs.semester, jm.hari;

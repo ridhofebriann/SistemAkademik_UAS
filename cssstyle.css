@@ -1,0 +1,264 @@
+/* General Body and Page Layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef); /* Subtle light gradient background */
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(to right, hsl(0, 0%, 0%), #66e8ff); /* Green gradient for header */
+    color: white;
+    padding: 1.5rem 0; /* More padding */
+    text-align: center;
+    box-shadow: 0 4px 10px (to right, hsl(0, 0%, 0%), #66e8ff); /* Stronger shadow */
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 1000; /* Ensure header is above other content */
+}
+
+header h1 {
+    font-size: 2.8em; /* Slightly larger heading */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Text shadow for depth */
+}
+
+/* Navigation Bar Styling */
+nav {
+    background-color: hwb(0 100% 0%); /* Darker blue/gray for nav */
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Deeper shadow */
+    border-bottom: 8px solid (to right, hsl(0, 0%, 0%), #66e8ff); /* Accent line below nav */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative; /* For potential future dropdowns */
+}
+
+nav ul li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 16px 25px; /* Larger padding for links */
+    text-decoration: none;
+    transition: background-color 0.4s ease, transform 0.2s ease; /* Smooth transition */
+    font-weight: 600; /* Bolder font */
+    letter-spacing: 0.5px; /* Slight letter spacing */
+}
+
+nav ul li a:hover {
+    background-color: #ffffff; /* Turquoise on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Main Content Area */
+main {
+    padding: 30px; /* More padding */
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.12); /* Softer, wider shadow */
+    margin-top: 40px; /* More margin top */
+    border-radius: 15px; /* More rounded corners */
+    margin-bottom: 40px; /* Add margin to bottom of main content */
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* More margin top */
+    background-color: #fff; /* Ensure table background is white */
+    border-radius: 8px; /* Slightly rounded table corners */
+    overflow: hidden; /* For rounded corners to apply to content */
+}
+
+table, th, td {
+    border: 1px solid #dee2e6; /* Lighter, more subtle border */
+}
+
+th, td {
+    padding: 12px; /* More padding */
+    text-align: left;
+    font-size: 1em; /* Slightly larger font */
+}
+
+th {
+    background-color: #000000; /* Primary green for header */
+    color: white;
+    font-weight: 700; /* Bolder font */
+    text-transform: uppercase; /* Uppercase header text */
+    letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f7f5; /* Very light green tint for even rows */
+}
+
+tr:hover {
+    background-color: #e6f7eb; /* Soft green on hover */
+    cursor: pointer; /* Indicate clickable rows */
+}
+
+/* --- FORM STYLING --- */
+form {
+    background-color: #ffffff;
+    padding: 45px; /* More padding */
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18); /* Stronger, softer shadow */
+    max-width: 700px; /* Slightly wider */
+    margin: 50px auto; /* More margin top/bottom */
+    border: 1px solid #c9d0d6; /* Slightly darker, solid border */
+}
+
+form h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 40px; /* More margin */
+    font-size: 2.2em; /* Larger font */
+    font-weight: 700;
+    border-bottom: 3px solid #000000; /* Thicker, slightly brighter green line */
+    padding-bottom: 20px; /* More padding */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* More gap */
+    margin-bottom: 20px; /* More margin */
+}
+
+.form-group {
+    flex: 1;
+    min-width: calc(50% - 15px); /* Adjusted for new gap */
+    box-sizing: border-box;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px; /* More margin */
+    font-weight: 600;
+    color: #495057; /* Slightly darker label color */
+    font-size: 1em; /* Standard font size */
+}
+
+form input[type="text"],
+form input[type="date"],
+form select,
+form input[type="number"],
+form input[type="time"] {
+    width: 100%;
+    padding: 14px; /* More padding */
+    margin-bottom: 15px;
+    border: 1px solid #aebac7; /* Softer border color */
+    border-radius: 8px; /* More rounded input fields */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.05em; /* Slightly larger font */
+    background-color: #fdfdfd; /* Very light background for inputs */
+}
+
+form input[type="text"]:focus,
+form input[type="date"]:focus,
+form select:focus,
+form input[type="number"]:focus,
+form input[type="time"]:focus {
+    border-color: #000000; /* Darker green on focus */
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4); /* Stronger shadow on focus */
+    outline: none;
+}
+
+form input[type="submit"] {
+    background: linear-gradient(to right, #000000, #000000); /* Green gradient for submit button */
+    color: white;
+    padding: 16px 30px; /* More padding */
+    border: none;
+    border-radius: 8px; /* More rounded */
+    cursor: pointer;
+    font-size: 1.2em; /* Larger font */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin-top: 35px; /* More margin top */
+    letter-spacing: 0.7px; /* More letter spacing */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Shadow for button */
+}
+
+form input[type="submit"]:hover {
+    background: linear-gradient(to right, #218838, #1e7e34); /* Darker gradient on hover */
+    transform: translateY(-4px); /* More pronounced lift effect */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35); /* Larger shadow on hover */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 25px; /* More padding */
+    background: linear-gradient(to right, #000000, #000000); /* Dark blue/gray gradient */
+    color: white;
+    margin-top: 40px; /* More margin top */
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.25);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column; /* Stack columns on smaller screens */
+        gap: 0; /* Remove gap when stacked */
+    }
+    .form-group {
+        min-width: 100%; /* Full width for stacked columns */
+    }
+    form {
+        padding: 30px; /* Reduce padding on smaller screens */
+    }
+    header h1 {
+        font-size: 2em; /* Smaller header on mobile */
+    }
+    nav ul {
+        flex-direction: column; /* Stack nav items on mobile */
+    }
+    nav ul li {
+        display: block; /* Full width for stacked nav items */
+    }
+}
+
+
+
+
+.welcome-box {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-top: 50px; /* Jarak dari navigasi */
+    max-width: 800px; /* Batasi lebar kotak */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.welcome-box h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 2em;
+    border-bottom: none; /* Hilangkan border bottom yang mungkin ada dari h2 global */
+    padding-bottom: 0;
+}
+
+.welcome-box p {
+    color: #666;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
